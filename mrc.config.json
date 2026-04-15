@@ -1,0 +1,15 @@
+{
+  "spec": "MRC",
+  "full_name": "Machine Readable Connectivity",
+  "type": "Specification",
+  "domain": "Board-level connectivity and electrical relationships",
+  "status": "Draft",
+  "sources": [
+    "netlist",
+    "bom",
+    "schematic_export",
+    "eda_design_file",
+    "ipc_2581",
+    "odb_plus_plus"
+  ]
+}

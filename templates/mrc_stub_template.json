@@ -1,0 +1,14 @@
+{
+  "board": {
+    "name": "<board_name>",
+    "revision": "<revision>"
+  },
+  "sources": {},
+  "components": [],
+  "nets": [],
+  "interfaces": [],
+  "signal_paths": [],
+  "power_domains": [],
+  "derived_features": [],
+  "traceability": []
+}

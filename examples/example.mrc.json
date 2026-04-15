@@ -1,0 +1,50 @@
+{
+  "board": {
+    "name": "environment_sensor_board",
+    "revision": "A"
+  },
+  "sources": {
+    "netlist": "board.net",
+    "bom": "bom.csv",
+    "schematic_export": "system.pdf"
+  },
+  "components": [
+    {
+      "refdes": "U1",
+      "class": "mcu",
+      "part_number": "STM32XYZ123",
+      "package": "LQFP64"
+    },
+    {
+      "refdes": "U3",
+      "class": "sensor",
+      "part_number": "BME690"
+    },
+    {
+      "refdes": "R14",
+      "class": "resistor",
+      "value": "4.7k"
+    }
+  ],
+  "nets": [
+    {
+      "name": "I2C1_SDA",
+      "members": [
+        {
+          "refdes": "U1",
+          "pin": "PA10"
+        },
+        {
+          "refdes": "U3",
+          "pin": "SDA"
+        },
+        {
+          "refdes": "R14",
+          "pin": "1"
+        }
+      ],
+      "signal_role": "i2c_data",
+      "power_domain": "3V3"
+    }
+  ]
+}
