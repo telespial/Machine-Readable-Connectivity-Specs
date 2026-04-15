@@ -1,90 +1,104 @@
 # Machine Readable Connectivity (MRC)
 
-## A Structured Connectivity Contract for Nets, Components, Signal Paths, and Electrical Relationships in Embedded Hardware Designs
+## A Structured Way to Represent Schematics, Nets, Components, and Board Connections
 
 Proposed by: Richard Haberkern  
 Contact: rmhaberkern@gmail.com
 
 Free for evaluation. Commercial use requires permission. See license.md for more information.
 
-Part of the [EmbeddedX platform](https://github.com/telespial/EmbeddedX-Specs).
+Part of the EmbeddedX platform.
 
 * * *
 
 ## Abstract
 
-Machine Readable Connectivity (MRC) establishes a structured connectivity contract for embedded hardware designs. It is intended to capture how components, nets, signal paths, power domains, and discrete electrical relationships are connected so that software systems, validation tools, and engineers can reason about the real wiring of a design without relying only on schematic PDFs.
+Engineers understand hardware through schematics. Schematics show how components are connected, how signals flow, and how circuits are designed.
 
-MRC is designed to work with existing industry outputs such as netlists, BOMs, schematic exports, PCB design files, and manufacturing-oriented interchange data. It does not try to replace schematics. It establishes a machine-readable representation of board-level connectivity that can be combined with Machine Readable Datasheet (MRD), Model Definition Package (MDP), Embedded Intelligence Layer (EIL), AI Integrated Coding System (AICS), and Embedded Intelligence Package (EIP) within the EmbeddedX platform.
+Machine Readable Connectivity (MRC) takes that same information and turns it into a structured format that software can use.
+
+MRC combines information from:
+
+* schematics
+* netlists
+* bill of materials (BOM)
+* board files
+
+This allows tools and systems to understand not only what is connected, but how the circuit works.
 
 * * *
 
 ## 1. Why MRC Exists
 
-Hardware datasheets explain what a device can do. Netlists explain what is connected. BOMs explain what the parts are. But those files are usually scattered, tool-specific, and difficult for software systems to reason about together.
+A schematic tells you how a board is designed.
 
-MRC exists to turn that connectivity into a reusable contract that can answer questions such as:
+A netlist tells you exactly which pins are connected.
 
-* what is connected to this MCU pin
-* what passives shape this signal
-* which sensor sits on this interface
-* which power domain feeds this peripheral
-* whether pull-ups, dividers, filters, or level shifts are present
-* which electrical assumptions firmware should respect
+A BOM tells you what parts are used.
 
-* * *
+A board file shows layout and routing.
 
-## 2. Scope
+These are all useful, but they are separate files and not easy for software to combine.
 
-MRC may capture:
-
-* board identity and revision
-* connectivity sources and traceability
-* component instances and classes
-* net names and members
-* interface groupings
-* signal paths
-* power domains
-* derived electrical relationships
-* inferred features with confidence markers
-* compatibility notes and constraints
+MRC exists to bring these together into one structured view.
 
 * * *
 
-## 3. Core Principle
+## 2. Core Idea
 
-If board wiring changes firmware meaning, validation behavior, deployment assumptions, or model interpretation, MRC should be able to express it.
+Think of MRC like this:
 
-* * *
+* schematic: how humans understand the circuit
+* netlist: exact electrical connections
+* MRC: structured version of both
 
-## 4. Relationship to Other Repositories
-
-* [EmbeddedX-Specs](https://github.com/telespial/EmbeddedX-Specs) establishes the umbrella platform
-* [Machine-Readable-Datasheets-Specs](https://github.com/telespial/Machine-Readable-Datasheets-Specs) establishes hardware-visible truth
-* [Model-Definition-Package-Specs](https://github.com/telespial/Model-Definition-Package-Specs) establishes model truth
-* [Embedded-Intelligence-Layer-Specs](https://github.com/telespial/Embedded-Intelligence-Layer-Specs) may use MRC to understand input provenance and degraded conditions
-* [AI-Integrated-Coding-System-Spec](https://github.com/telespial/AI-Integrated-Coding-System-Spec) may use MRC to generate board-aware code and checks
-* [Embedded-Intelligence-Package-Specs](https://github.com/telespial/Embedded-Intelligence-Package-Specs) may package MRC-linked deployment metadata
+MRC should reflect what an engineer would see in a schematic, but in a format that can be validated and processed.
 
 * * *
 
-## 5. Reading Order
+## 3. What MRC Describes
 
-Recommended reading order:
+MRC can describe:
 
-1. `readme.md`
-2. `docs/overview.md`
-3. `docs/schema.md`
-4. `docs/sources.md`
-5. `docs/nets.md`
-6. `docs/signal-paths.md`
-7. `docs/derived-features.md`
-8. `docs/power-domains.md`
-9. `docs/interop.md`
-10. `examples/example.mrc.json`
+* components on the board
+* pins and connections
+* nets and signals
+* signal paths through components
+* power rails and domains
+* common circuit structures such as pull-ups, dividers, and filters
+
+* * *
+
+## 4. Example Questions MRC Should Answer
+
+* What is connected to this MCU pin?
+* Which resistor pulls this signal up?
+* Which sensor is on this bus?
+* How is this analog signal filtered?
+* Which power rail feeds this device?
+* What does this part of the schematic do?
+
+* * *
+
+## 5. Relationship to EmbeddedX
+
+MRC is one part of the EmbeddedX system:
+
+* Machine Readable Datasheet (MRD) describes what hardware can do
+* Machine Readable Connectivity (MRC) shows how the schematic and board are wired
+* Model Definition Package (MDP) defines model inputs and outputs
+* Embedded Intelligence Layer (EIL) adds runtime intelligence
+* AI Integrated Coding System (AICS) controls code generation and validation
+* Embedded Intelligence Package (EIP) packages the final output
+
+* * *
+
+## 6. Design Rule
+
+If a connection or circuit matters in a schematic, MRC should be able to describe it.
 
 * * *
 
 ## License
 
-See `license.md`.
+See license.md for terms.
