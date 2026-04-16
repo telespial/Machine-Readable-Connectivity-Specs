@@ -1,4 +1,4 @@
-# MRC License
+# EmbeddedX License
 
 Copyright (c) 2026 Richard Haberkern
 
