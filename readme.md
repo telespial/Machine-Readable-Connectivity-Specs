@@ -1,6 +1,6 @@
 # Machine Readable Connectivity (MRC)
 
-## A Structured Connectivity Contract for Nets, Components, Signal Paths, and Electrical Relationships in Embedded Hardware Designs
+## Board Connectivity Data in a Form Tools Can Read
 
 Proposed by: Richard Haberkern  
 Contact: rmhaberkern@gmail.com
@@ -13,9 +13,9 @@ Part of the [EmbeddedX platform](https://github.com/telespial/EmbeddedX-Specs).
 
 ## Abstract
 
-Machine Readable Connectivity (MRC) establishes a structured connectivity contract for embedded hardware designs. It is intended to capture how components, nets, signal paths, power domains, and discrete electrical relationships are connected so that software systems, validation tools, and engineers can reason about the real wiring of a design without relying only on schematic PDFs.
+Machine Readable Connectivity (MRC) defines a structured format for embedded board connectivity. It captures how components, nets, signal paths, power domains, and electrical relationships are wired so tools and engineers can reason about the actual board without relying only on schematic PDFs.
 
-MRC is designed to work with existing industry outputs such as netlists, BOMs, schematic exports, PCB design files, and manufacturing-oriented interchange data. It does not try to replace schematics. It establishes a machine-readable representation of board-level connectivity that can be combined with Machine Readable Datasheet (MRD), Model Definition Package (MDP), Embedded Intelligence Layer (EIL), AI Integrated Coding System (AICS), and Embedded Intelligence Package (EIP) within the EmbeddedX platform.
+MRC is designed to work with existing outputs such as netlists, BOMs, schematic exports, PCB design files, and manufacturing interchange data. It does not replace schematics. It gives board-level connectivity a representation that can be combined with MRD, MDP, EIL, AICS, and EIP in the broader EmbeddedX toolchain.
 
 * * *
 
@@ -60,8 +60,8 @@ If board wiring changes firmware meaning, validation behavior, deployment assump
 ## 4. Relationship to Other Repositories
 
 * [EmbeddedX-Specs](https://github.com/telespial/EmbeddedX-Specs) establishes the umbrella platform
-* [Machine-Readable-Datasheets-Specs](https://github.com/telespial/Machine-Readable-Datasheets-Specs) establishes hardware-visible truth
-* [Model-Definition-Package-Specs](https://github.com/telespial/Model-Definition-Package-Specs) establishes model truth
+* [Machine-Readable-Datasheets-Specs](https://github.com/telespial/Machine-Readable-Datasheets-Specs) defines device capabilities visible to firmware
+* [Model-Definition-Package-Specs](https://github.com/telespial/Model-Definition-Package-Specs) defines model metadata and runtime assumptions
 * [Embedded-Intelligence-Layer-Specs](https://github.com/telespial/Embedded-Intelligence-Layer-Specs) may use MRC to understand input provenance and degraded conditions
 * [AI-Integrated-Coding-System-Spec](https://github.com/telespial/AI-Integrated-Coding-System-Spec) may use MRC to generate board-aware code and checks
 * [Embedded-Intelligence-Package-Specs](https://github.com/telespial/Embedded-Intelligence-Package-Specs) may package MRC-linked deployment metadata
