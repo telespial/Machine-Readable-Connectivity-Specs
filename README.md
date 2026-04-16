@@ -1,5 +1,7 @@
 # Machine Readable Connectivity (MRC)
 
+[← Back to EmbeddedX-Specs (canonical index)](https://github.com/telespial/EmbeddedX-Specs)
+
 ## Board Connectivity Data in a Form Tools Can Read
 
 Proposed by: Richard Haberkern  
