@@ -23,7 +23,7 @@ You may NOT, without prior written permission from the author:
 * Use the Software for commercial purposes
 * Sell, sublicense, or distribute the Software as part of a commercial product or service
 * Use the Software in any revenue-generating system
-* Represent altered versions as the official MRC specification
+* Represent altered versions as the official EmbeddedX specification
 * Remove or modify copyright or license notices
 
 ## 4. Contact
