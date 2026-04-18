@@ -7,7 +7,7 @@
 Proposed by: Richard Haberkern  
 Contact: rmhaberkern@gmail.com
 
-Free for evaluation. Commercial use requires permission. See `license.md` for more information.
+Free for evaluation. Commercial use requires permission. See [LICENSE.md](./LICENSE.md) for more information.
 
 Part of the **EmbeddedX specification family**.
 
@@ -92,4 +92,4 @@ Recommended reading order:
 
 ## License
 
-See `license.md`.
+See [LICENSE.md](./LICENSE.md).
